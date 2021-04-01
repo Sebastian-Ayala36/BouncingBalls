@@ -1,0 +1,231 @@
+<div id="square" style="
+  z-index: index 3;;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:140px;
+  height: 140px;px;
+  border-radius:0%;
+  background:rgb(59, 55, 55)"></div>
+
+<div id="ball" style="
+  z-index:4;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:green"></div>
+
+<div id="ball2" style="
+z-index:5;
+position:absolute;
+left:80px;
+top:0px;
+width:30px;
+height:30px;
+border-radius:50%;
+background:purple"></div>
+
+<div id="ball3" style="
+z-index:5;
+position:absolute;
+left:55px;
+top:0px;
+width:30px;
+height:30px;
+border-radius:50%;
+background:red"></div>
+
+<div id="ball4" style="
+z-index:5;
+position:absolute;
+left:0px;
+top:55px;
+width:30px;
+height:30px;
+border-radius:50%;
+background:blue"></div>
+
+
+
+<script>
+
+var square = document.getElementById('sqare');
+var ball = document.getElementById('ball');
+var ball2 = document.getElementById('ball2');
+var ball3 = document.getElementById('ball3');
+var ball4 = document.getElementById('ball4');
+var velocity = 10;
+var velocity2 = 10;
+var velocity3 = 10;
+var velocity4 = 10;
+var positionX = 0;
+var positionX2 = 110;
+var positionX4 = 0;
+var positionY = 0;
+var positionY2 = 0;
+var positionY3 = 0;
+var reverse = false;
+var reverse2 = false;
+var reverse3 = false;
+var reverse4 = false;
+
+
+// BALL1
+// ----------------
+
+function myVelocity(){
+
+var Xmin = 0;
+var Xmax = 100;
+var Ymin = 0;
+var Ymax = 100;
+
+if(reverse === false){
+  positionX = positionX + velocity;
+  ball.style.left = positionX + 'px';
+  
+  
+  positionY = positionY + velocity;
+  ball.style.top = positionY + 'px';
+ 
+
+  }else if (reverse === true){
+  positionX = positionX - velocity;
+  ball.style.left = positionX + 'px';
+
+
+   positionY = positionY - velocity;
+  ball.style.top = positionY + 'px';
+
+  }
+  
+  if(positionX > Xmax || 
+  positionX == Xmin ||
+  positionY > Ymax || 
+  positionY == Ymin ){
+    reverse = !reverse;
+  }
+
+
+  }
+
+setInterval(myVelocity,100);
+////////////////////////////////////////////////
+/////PELOTA 2/////////////////////////////
+//////////////////////////////////////////
+
+function myVelocity2(){
+
+var Xmin = 0;
+var Xmax = 100;
+var Ymin = 0;
+var Ymax = 100;
+
+if(reverse2 === false){
+  positionX2 = positionX2 - velocity2;
+  ball2.style.left = positionX2 + 'px';
+  
+  
+  positionY2 = positionY2 + velocity2;
+  ball2.style.top = positionY2 + 'px';
+ 
+
+  }else if (reverse2 === true){
+  positionX2 = positionX2 + velocity2;
+  ball2.style.left = positionX2 + 'px';
+
+
+   positionY2 = positionY2 - velocity2;
+  ball2.style.top = positionY2 + 'px';
+
+  }
+  
+  if(positionX2 > Xmax || 
+  positionX2 == Xmin ||
+  positionY2 > Ymax || 
+  positionY2 == Ymin ){
+    reverse2 = !reverse2;
+  }
+
+
+  }
+
+setInterval(myVelocity2,100);
+
+
+////////////////////////////////////////////////
+/////PELOTA 3/////////////////////////////
+//////////////////////////////////////////
+
+function myVelocity3(){
+
+var Ymin = 0;
+var Ymax = 100;
+
+if(reverse3 === false){
+
+  positionY3 = positionY3 + velocity3;
+  ball3.style.top = positionY3 + 'px';
+ 
+
+  }else if (reverse3 === true){
+  
+   positionY3 = positionY3 - velocity3;
+  ball3.style.top = positionY3 + 'px';
+
+  }
+  
+  if(positionY3 > Ymax || 
+  positionY3 == Ymin ){
+    reverse3 = !reverse3;
+  }
+
+
+  }
+
+setInterval(myVelocity3,100);
+
+////////////////////////////////////////////////
+/////PELOTA 4/////////////////////////////
+//////////////////////////////////////////
+
+
+
+function myVelocity4(){
+
+var Xmin = 0;
+var Xmax = 100;
+
+
+if(reverse4 === false){
+  positionX4 = positionX4 + velocity4;
+  ball4.style.left = positionX4 + 'px';
+  
+  
+
+ 
+
+  }else if (reverse4 === true){
+  positionX4 = positionX4 - velocity4;
+  ball4.style.left = positionX4 + 'px';
+
+
+
+
+  }
+  
+  if(positionX4 > Xmax || 
+  positionX4 == Xmin ){
+    reverse4 = !reverse4;
+  }
+
+
+  }
+
+setInterval(myVelocity4,100);
+
+
+</script>
